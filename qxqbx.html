@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>选择</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<form action="1.php" method="post">
+			<input type="checkbox" name="hobby[]" value="1" >111111111<br />
+			<input type="checkbox" name="hobby[]" value="2" >111111111<br />
+			<input type="checkbox" name="hobby[]" value="3" >111111111<br />
+			<input type="checkbox" name="hobby[]" value="4" >111111111<br />
+			<input type="checkbox" name="hobby[]" value="5" >111111111<br />
+			<input type="checkbox" name="hobby[]" value="6" >111111111<br />
+			<input type="checkbox" name="hobby[]" value="7" >111111111<br />
+			<input type="checkbox" name="hobby[]" value="8" >111111111<br />
+			<input type="checkbox" name="hobby[]" value="9" >111111111<br />
+			<input type="checkbox" name="hobby[]" value="0" >111111111<br />
+		</form>
+		<hr />
+		<button type="button" id="all" >全选</button>
+		<button type="button" id="notall">全不选</button>
+		<button type="button" id="fan">反选</button>
+		<script>
+		(function(){
+			//找到所有按钮(选择)
+			var all=document.getElementById('all');
+			var notall=document.getElementById('notall');
+			var fan=document.getElementById('fan');
+		
+			//注册事件   全选
+			all.onclick=function(){
+				//获取表单中所有的爱好多选按钮
+				var hobbys=document.getElementsByName('hobby[]');
+				//遍历所有的hobby的选框，添加checked属性即可
+				for(var i=0;i<hobbys.length;i++){
+					hobbys[i].checked=true;
+				}
+			}
+			
+			//注册事件   全不选
+			notall.onclick=function(){
+				//获取表单中所有的爱好多选按钮
+				var hobbys=document.getElementsByName('hobby[]');
+				//遍历所有的hobby的选框，添加checked属性即可
+				for(var i=0;i<hobbys.length;i++){
+					hobbys[i].checked=false;
+				}
+			}
+			
+			//注册事件   反选
+			fan.onclick=function(){
+				//获取表单中所有的爱好多选按钮
+				var hobbys=document.getElementsByName('hobby[]');
+				//遍历所有的hobby的选框，添加checked属性即可
+				for(var i=0;i<hobbys.length;i++){
+					hobbys[i].checked=!hobbys[i].checked;
+				}
+			}
+		
+		
+		
+		})()
+		</script>
+	</body>
+</html>
